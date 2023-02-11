@@ -1,0 +1,19 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% block titulo %}
+Aca creas profesores   
+{% endblock %}
+
+{% block formulario %}
+
+<form action="" method="POST"> {% csrf_token %}
+    
+    <table>
+        {{formulario1.as_table}}
+    </table>
+    
+
+    <input type = "submit" value="Enviar">
+</form>
+                
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% block titulo %}
+Esta es la lista de los cursos disponibles. 
+{% endblock %} 
+
+
+{% block formulario %}
+
+<button>
+    <a href="{% url 'Crear Cursos' %}">Crear Curso</a>
+</button>
+<table class="table">
+    
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Camada</th>
+        <th scope="col">Comision</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for curso in object_list %}
+
+        <tr>
+            <th scope="row">{{curso.id}}</th>
+            <td>{{curso.nombre}}</td>
+            <td>{{curso.camada}}</td>
+            <td>{{curso.comision}}</td>
+            <td>
+                <button>
+                    <a href="{% url 'Editar Cursos' curso.id %}">Editar Curso</a>
+                </button>
+                <button>
+                    <a href="{% url 'Borrar Cursos' curso.id %}">Borrar Curso</a>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock %}

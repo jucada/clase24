@@ -1,0 +1,27 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% block titulo %}
+Los resultados son:    
+{% endblock %}
+
+{% block formulario %}
+
+<p>Estamos buscando a los profesores de profesión:  {{profesion}}.</p>
+
+<ol>  
+
+{% for x in resultado %} 
+
+    <li> Nombre: {{x.nombre}} ---- Apellido: {{x.apellido}} </li>
+    
+
+{% endfor %}
+
+</ol>
+                
+{% endblock %}
+
+
+
+
+

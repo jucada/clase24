@@ -1,0 +1,23 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% block titulo %}
+¡Acá se ven los estudiantes!                               
+{% endblock %}
+
+
+{% block formulario %}
+
+
+    <div class="container">
+        <a class="btn btn-primary" href="{% url 'Crear Estudiantes' %}">Nuevo Estudiante</a>
+    </div>
+
+
+{% for estudiante in lista %}
+
+
+    <p> Nombre: {{estudiante.nombre}} ------ Apellido: {{estudiante.apellido}} ------ Correo: {{estudiante.email}}</p>
+
+{% endfor %}
+
+{% endblock %}

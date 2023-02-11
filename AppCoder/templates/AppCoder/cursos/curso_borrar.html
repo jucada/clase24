@@ -1,0 +1,16 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% block titulo %}
+Aca borras cursos   
+{% endblock %}
+
+{% block formulario %}
+
+<form action="" method="POST"> {% csrf_token %}
+    
+   ¿Está seguro que desea borrar el curso "{{object.nombre}}"?
+
+    <input type = "submit" value="Enviar">
+</form>
+                
+{% endblock %}

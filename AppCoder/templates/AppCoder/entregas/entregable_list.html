@@ -1,0 +1,46 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% block titulo %}
+Esta es la lista de los entregables disponibles. 
+{% endblock %} 
+
+
+{% block formulario %}
+
+<button>
+    <a href="{% url 'Crear Entregables' %}">Crear Entregable</a>
+</button>
+<table class="table">
+    
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Entregado</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for entrega in object_list %}
+
+        <tr>
+            <th scope="row">{{entrega.id}}</th>
+            <td>{{entrega.nombre}}</td>
+            <td>{{entrega.fecha}}</td>
+            <td>{{entrega.entregado}}</td>
+            <td>
+                <button>
+                    <a href="{% url 'Editar Entregables' entrega.id %}">Editar Entregable</a>
+                </button>
+                <button>
+                    <a href="{% url 'Borrar Entregables' entrega.id %}">Borrar Entregable</a>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock %}

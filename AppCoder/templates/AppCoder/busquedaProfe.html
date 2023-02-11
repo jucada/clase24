@@ -1,0 +1,16 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% block titulo %}
+Aca creas entregables!    
+{% endblock %}
+
+{% block formulario %}
+<form action="/AppCoder/resultados_busqueda/" method = "GET">
+
+    <input type="text" name="profesion">
+
+    <input type="submit" value="Buscar">
+
+</form>
+                
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% block titulo %}
+Esta es la lista de los profes disponibles. 
+{% endblock %} 
+
+
+{% block formulario %}
+<button>
+    <a href="{% url 'Crear Profesores' %}">Crear profesor</a>
+</button>
+
+
+
+{% for profe in listaProfes %}
+
+
+    <p> Nombre: {{profe.nombre}} ------ Apellido: {{profe.apellido}} ------ 
+        Profesion: {{profe.profesion}} ------ Correo: {{profe.email}} ----- Edad: {{profe.edad}} 
+
+    <a href="{% url 'Editar Profesor' profe.nombre %}">Editar Profesor</a>
+    <a href="{% url 'Borrar Profesor' profe.nombre %}">Borrar Profesor</a>
+
+    </p>
+
+{% endfor %}
+
+{% endblock %}

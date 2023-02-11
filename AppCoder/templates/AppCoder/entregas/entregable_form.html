@@ -1,0 +1,16 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% load crispy_forms_tags %}
+
+{% block titulo %}
+Acá creas entregables   
+{% endblock %}
+
+{% block formulario %}
+
+<form action="" method="POST" > {% csrf_token %}
+    {{ form|crispy }}
+    <input type = "submit" value="Enviar" class="btn btn-success">
+</form>
+                
+{% endblock %}
